@@ -12,13 +12,13 @@ for group in groups:
         x_max = -1000000
         y_min = 1000000
         y_max = -1000000
-        print 'processing group', id
+        print ('processing group'), id
         coord_lists = []
         paths = group.getElementsByTagName('path')
         for path in paths:
             coords = []
             d = path.attributes['d'].value
-            print '  processing subpath', d
+            print ('processing subpath'), d
             parts = d.split(' ')
             for part in parts:
                 if len(part.split(',')) == 2:
@@ -52,5 +52,5 @@ for group in groups:
         coord_lists_by_id[id[1]] = scaled_coord_lists
 
 #print coord_lists_by_id
-print json.dumps(coord_lists_by_id, indent=2, sort_keys=True)
+print (json.dumps(coord_lists_by_id, indent=2, sort_keys=True))
 
